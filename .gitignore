@@ -7,3 +7,5 @@ bin/
 appsettings.json
 # 日志文件
 *.log
+# VS用户配置
+*.suo
