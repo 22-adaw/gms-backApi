@@ -9,3 +9,4 @@ appsettings.json
 *.log
 # VS用户配置
 *.suo
+*.dtbcache.v2
