@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cms.Entity\Gms.Entity.csproj" />
+    <ProjectReference Include="..\Cms.IRepository\Gms.IRepository.csproj" />
+    <ProjectReference Include="..\Cms.IService\Gms.IService.csproj" />
+    <ProjectReference Include="..\Cms.Repository\Gms.Repository.csproj" />
+    <ProjectReference Include="..\Gms.Common\Gms.Common.csproj" />
+  </ItemGroup>
+
+</Project>

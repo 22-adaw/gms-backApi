@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cms.EntityFrameworkCore\Gms.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\Cms.Entity\Gms.Entity.csproj" />
+    <ProjectReference Include="..\Cms.IRepository\Gms.IRepository.csproj" />
+  </ItemGroup>
+
+</Project>

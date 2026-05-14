@@ -1,0 +1,15 @@
+D:\gms\gms-backApi\CMSSystem\Gms.Common\bin\Release\net8.0\Gms.Common.deps.json
+D:\gms\gms-backApi\CMSSystem\Gms.Common\bin\Release\net8.0\Gms.Common.dll
+D:\gms\gms-backApi\CMSSystem\Gms.Common\bin\Release\net8.0\Gms.Common.pdb
+D:\gms\gms-backApi\CMSSystem\Gms.Common\bin\Release\net8.0\Gms.Entity.dll
+D:\gms\gms-backApi\CMSSystem\Gms.Common\bin\Release\net8.0\Gms.Entity.pdb
+D:\gms\gms-backApi\CMSSystem\Gms.Common\obj\Release\net8.0\Gms.Common.csproj.AssemblyReference.cache
+D:\gms\gms-backApi\CMSSystem\Gms.Common\obj\Release\net8.0\Gms.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\gms\gms-backApi\CMSSystem\Gms.Common\obj\Release\net8.0\Gms.Common.AssemblyInfoInputs.cache
+D:\gms\gms-backApi\CMSSystem\Gms.Common\obj\Release\net8.0\Gms.Common.AssemblyInfo.cs
+D:\gms\gms-backApi\CMSSystem\Gms.Common\obj\Release\net8.0\Gms.Common.csproj.CoreCompileInputs.cache
+D:\gms\gms-backApi\CMSSystem\Gms.Common\obj\Release\net8.0\Gms.Common.csproj.Up2Date
+D:\gms\gms-backApi\CMSSystem\Gms.Common\obj\Release\net8.0\Gms.Common.dll
+D:\gms\gms-backApi\CMSSystem\Gms.Common\obj\Release\net8.0\refint\Gms.Common.dll
+D:\gms\gms-backApi\CMSSystem\Gms.Common\obj\Release\net8.0\Gms.Common.pdb
+D:\gms\gms-backApi\CMSSystem\Gms.Common\obj\Release\net8.0\ref\Gms.Common.dll
