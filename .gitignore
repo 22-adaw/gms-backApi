@@ -1,12 +1,14 @@
 # 编译缓存，不上传
 obj/
 bin/
-# VS编辑器缓存
+
+# VS编辑器缓存（全部忽略）
 .vs/
-# 数据库密码、连接字符串（最重要！）
-appsettings.json
-# 日志文件
-*.log
-# VS用户配置
 *.suo
 *.dtbcache.v2
+
+# 数据库密码、连接字符串（最重要！）
+appsettings.json
+
+# 日志文件
+*.log
