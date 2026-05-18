@@ -168,7 +168,8 @@ namespace Gms.WebApi.Controllers
                 RealName=userParams.RealName,
                 UserPhone=userParams.UserPhone,
                 DepartmentName=userParams.DepartmentName,
-                TotalCount=0
+                TotalCount=0,
+                UserEmail=userParams.UserEmail
             };
             var users = userInfoService.LoadPageEntities(userSearch,false).Select(u=>new {Id=u.Id,UserPhone=u.UserPhone,RealName= u.RealName,CreateDate=u.CreateDate ,DepartmentName=u.Department!=null?u.Department.DepartmentName:"无部门",PhotoUrl=u.PhotoUrl,IsClient=u.IsClient}).ToList();
             users = users.Where(u => u.IsClient==Convert.ToBoolean(ClientCheckEnum.Employee)).ToList();
