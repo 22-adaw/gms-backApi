@@ -1,14 +1,19 @@
-# 编译缓存，不上传
-obj/
-bin/
+# 编译缓存（所有子项目都忽略）
+**/obj/
+**/bin/
 
-# VS编辑器缓存（全部忽略）
+# 编译生成文件（dll、pdb 强制忽略）
+*.dll
+*.pdb
+*.cache
+*.exe
+
+# VS编辑器缓存
 .vs/
 *.suo
+*.user
 *.dtbcache.v2
 
-# 数据库密码、连接字符串（最重要！）
+# 配置与日志
 appsettings.json
-
-# 日志文件
 *.log

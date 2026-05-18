@@ -107,6 +107,10 @@ namespace Gms.Service
             { 
                 temp = temp.Where(a => a.Department.DepartmentName.Contains(userSearch.DepartmentName));
             }
+            if(!string.IsNullOrEmpty(userSearch.UserEmail))
+            {
+                temp = temp.Where(a => a.UserEmail.Contains(userSearch.UserEmail));
+            }
             userSearch.TotalCount = temp.Count();
            
             int skip = (userSearch.PageIndex - 1) * userSearch.PageSize;
