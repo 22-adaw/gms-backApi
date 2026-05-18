@@ -76,7 +76,8 @@ namespace Gms.WebApi.Controllers
                 EquipmentTypes = equipmentType,
                 EquipmentStatus = 3,
                 PurchaseDate = DateTime.Now,
-                CreateDate= DateTime.Now
+                CreateDate= DateTime.Now,
+                IsDeleted=Convert.ToBoolean(DelFlagEnum.Nomal)
             };
             //插入数据，并跟新到数据库
             await equipmentsService.AddEntity(equipments);
@@ -91,7 +92,8 @@ namespace Gms.WebApi.Controllers
                 RelatedCode = equip.Id,
                 RelatedType = "equipment",
                 Remark = equipmentsDTO.Remark,
-                CreateDate = DateTime.Now
+                CreateDate = DateTime.Now,
+                IsDeleted = Convert.ToBoolean(DelFlagEnum.Nomal)
             };
             //财务信息插入
             bool v1 = await financeInfoService.AddEntity(financeInfo);
