@@ -63,7 +63,8 @@ namespace Gms.WebApi.Controllers
                 Order = vipParams.Order,
                 PageIndex = vipParams.PageIndex,
                 PageSize = vipParams.PageSize,
-                TotalCount = 0
+                TotalCount = 0,
+                VipEmail=vipParams.VipEmail
             };
             var vipInfoList =await vipInfoService.LoadPagesEntities(vipSearch, false).Select(v => new { Id = v.Id, Gender = v.Gender, VipPhone = v.VipPhone, VipEmail = v.VipEmail, Status = v.Status, VipName = v.VipName ,VipCardId=v.VipCardId, CardNum = v.VipCard != null ? (v.VipCard.CardNum ?? 0) : 0, FreezeStatus=v.VipCard==null? 0: v.VipCard.FreezeStatus }).ToListAsync();
             if(vipInfoList.Count>0)

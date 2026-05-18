@@ -4,5 +4,6 @@
     {
         public string? VipPhone { get; set; }
         public string? VipName { get; set; }
+        public string? VipEmail { get; set; }
     }
 }

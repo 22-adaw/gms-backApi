@@ -54,7 +54,11 @@ namespace Gms.Service
             {
                 temp = temp.Where(t => t.VipName.Contains(vipSearch.VipName));
             }
-            vipSearch.TotalCount = temp.Count();
+            if (!string.IsNullOrEmpty(vipSearch.VipEmail))
+            {
+                temp = temp.Where(t => t.VipEmail.Contains(vipSearch.VipEmail));
+            }
+                vipSearch.TotalCount = temp.Count();
             int skip = (vipSearch.PageIndex - 1) * vipSearch.PageSize;
             int take = vipSearch.PageSize;
 
