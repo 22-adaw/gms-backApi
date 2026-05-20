@@ -1,6 +1,7 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Gms.Common;
+using Gms.Entity;
 using Gms.EntityFrameworkCore;
 using Gms.WebApi.AutofaceDI;
 using Gms.WebApi.Filters;
@@ -62,6 +63,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         }
     };
 });
+// 绑定配置到实体
+builder.Services.Configure<EmailOptions>(builder.Configuration.GetSection("EmailOptions"));
 //builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddSingleton<MailQueueManager>(); //---------------单例生命周期
 builder.Services.AddMemoryCache();//添加内存缓存服务
