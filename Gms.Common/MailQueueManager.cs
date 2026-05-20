@@ -1,5 +1,6 @@
 ﻿using Gms.Entity;
 using MailKit.Net.Smtp;
+using Microsoft.Extensions.Options;
 using MimeKit;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,11 @@ namespace Gms.Common
     public class MailQueueManager
     {
         private readonly SmtpClient smtpClient;
-        public MailQueueManager()
+        private readonly IOptions<EmailOptions> emailOptions;
+        public MailQueueManager(IOptions<EmailOptions> emailOptions)
         {
             smtpClient = new SmtpClient();
+            this.emailOptions = emailOptions;
         }
         public void Run()
         {
@@ -70,7 +73,7 @@ namespace Gms.Common
         {
             var message = new MimeMessage();
             //MailboxAddress(发送者名称，发送者账号)
-            message.From.Add(new MailboxAddress("健身房管理系统", "xinby383@126.com"));
+            message.From.Add(new MailboxAddress(emailOptions.Value.FromName, emailOptions.Value.FromEmail));
 
             //下面构建的是接收者账号
             var mailboxAddressList = new List<MailboxAddress>();
@@ -111,12 +114,12 @@ namespace Gms.Common
             try
             {
                 // 指定smtp服务器地址，以及端口号
-                smtpClient.Connect("smtp.126.com", 25, false);
+                smtpClient.Connect(emailOptions.Value.SmtpHost, emailOptions.Value.SmtpPort, false);
                 // Note: only needed if the SMTP server requires authentication
                 if (!smtpClient.IsAuthenticated)
                 {
                     // 指定发送者邮箱的地址以及授权码
-                    smtpClient.Authenticate(System.Text.Encoding.UTF8, "xinby383@126.com", "WSykSncbMWwgKycE");
+                    smtpClient.Authenticate(System.Text.Encoding.UTF8, emailOptions.Value.FromEmail, emailOptions.Value.AuthCode);
                 }
                 smtpClient.Send(message);
             }

@@ -16,4 +16,6 @@
 
 # 配置与日志
 appsettings.json
+appsettings.Development.json
+appsettings.Production.json
 *.log
