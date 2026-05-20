@@ -19,3 +19,10 @@ appsettings.json
 appsettings.Development.json
 appsettings.Production.json
 *.log
+
+# 发布配置
+*.pubxml.user
+Properties/PublishProfiles/*.user
+
+# 上传图片、静态资源缓存
+wwwroot/images/
