@@ -71,9 +71,10 @@ namespace Gms.Common
         /// <exception cref="ArgumentNullException"></exception>
         private MimeMessage ConvertToMimeMessage(MailBox box)
         {
+            var config = emailOptions.Value;
             var message = new MimeMessage();
             //MailboxAddress(发送者名称，发送者账号)
-            message.From.Add(new MailboxAddress(emailOptions.Value.FromName, emailOptions.Value.FromEmail));
+            message.From.Add(new MailboxAddress(config.FromName, config.FromEmail));
 
             //下面构建的是接收者账号
             var mailboxAddressList = new List<MailboxAddress>();
@@ -106,6 +107,7 @@ namespace Gms.Common
         /// <exception cref="ArgumentNullException"></exception>
         private void SendUserMail(MimeMessage message)
         {
+            var config = emailOptions.Value;
             if (message == null)
             {
                 throw new ArgumentNullException(nameof(message));
@@ -114,12 +116,12 @@ namespace Gms.Common
             try
             {
                 // 指定smtp服务器地址，以及端口号
-                smtpClient.Connect(emailOptions.Value.SmtpHost, emailOptions.Value.SmtpPort, false);
+                smtpClient.Connect(config.SmtpHost, config.SmtpPort, false);
                 // Note: only needed if the SMTP server requires authentication
                 if (!smtpClient.IsAuthenticated)
                 {
                     // 指定发送者邮箱的地址以及授权码
-                    smtpClient.Authenticate(System.Text.Encoding.UTF8, emailOptions.Value.FromEmail, emailOptions.Value.AuthCode);
+                    smtpClient.Authenticate(System.Text.Encoding.UTF8, config.FromEmail, config.AuthCode);
                 }
                 smtpClient.Send(message);
             }

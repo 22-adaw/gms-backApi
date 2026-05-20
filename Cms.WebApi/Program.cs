@@ -63,6 +63,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         }
     };
 });
+// 绑定配置到实体
 builder.Services.Configure<EmailOptions>(builder.Configuration.GetSection("EmailOptions"));
 //builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddSingleton<MailQueueManager>(); //---------------单例生命周期
