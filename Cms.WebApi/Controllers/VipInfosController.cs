@@ -596,7 +596,7 @@ namespace Gms.WebApi.Controllers
             }
             //0表示未冻结，1表示冻结
             vipCard.FreezeStatus = vipCard.FreezeStatus == 0 ? 1 : 0;
-            string statueStr = vipCard.FreezeStatus == 0 ? "冻结成功" : "解冻成功";
+            string statueStr = vipCard.FreezeStatus == 0 ? "解冻成功":"冻结成功";
             //保存到数据库
             bool v = await vipCardService.UpdateEntity(vipCard);
             
