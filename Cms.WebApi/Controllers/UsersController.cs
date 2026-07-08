@@ -105,7 +105,8 @@ namespace Gms.WebApi.Controllers
                     UserName = userInfoDTO.UserName,
                     UserPassword = userInfoDTO.UserPassword,
                     DepartmentName = department.DepartmentName,
-                    UserPhone= userInfoDTO.UserPhone
+                    UserPhone= userInfoDTO.UserPhone,
+                    Gender= userInfoDTO.Gender
                 };
                 if(v)
                 {
