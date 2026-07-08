@@ -14,5 +14,6 @@ namespace Gms.Entity.DTO
         public string? DepartmentName { get; set; }
         public string? UserEmail { get; set; }
         public string? UserPhone { get; set; }
+        public int? Gender { get; set; }
     }
 }

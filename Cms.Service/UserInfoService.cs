@@ -304,7 +304,7 @@ namespace Gms.Service
         public Task<bool> HandleCreate(UserInDTO userInDTO)
         {
             StringBuilder sb = new StringBuilder();
-
+            string assert = userInDTO.Gender == 1 ? "先生" : userInDTO.Gender == 0 ? "女士" : "";
             sb.Append("<!DOCTYPE html>");
             sb.Append("<html>");
             sb.Append("<head><meta charset='UTF-8'></head>");
@@ -315,7 +315,7 @@ namespace Gms.Service
 
             sb.Append("<h3 style='margin:0 0 25px 0;color:#0F4C81;font-size:18px;border-bottom:1px solid #dee2e6;padding-bottom:15px;'>健身房管理系统 - 员工账号开通通知</h3>");
 
-            sb.Append($"<p style='margin:0 0 20px 0;'><strong style='font-size:15px;'>尊敬的 {userInDTO.RealName} 先生/女士：</strong></p>");
+            sb.Append($"<p style='margin:0 0 20px 0;'><strong style='font-size:15px;'>尊敬的 {userInDTO.RealName} {assert}：</strong></p>");
             
             sb.Append("<p style='margin:0 0 12px 0;'>您好！</p>");
             sb.Append("<p style='margin:0 0 12px 0;'>恭喜您已正式加入智健中心健身房，成为团队一员。您的专属系统账号现已开通，账户信息如下：</p>");
